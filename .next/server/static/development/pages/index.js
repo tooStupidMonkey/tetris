@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -101,6 +101,39 @@ module.exports =
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/from.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/array/from */ "core-js/library/fn/array/from");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/array/is-array */ "core-js/library/fn/array/is-array");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/is-iterable */ "core-js/library/fn/is-iterable");
 
 /***/ }),
 
@@ -167,6 +200,31 @@ module.exports = __webpack_require__(/*! core-js/library/fn/symbol */ "core-js/l
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/symbol/iterator */ "core-js/library/fn/symbol/iterator");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithoutHoles; });
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+/* harmony import */ var _core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__);
+
+function _arrayWithoutHoles(arr) {
+  if (_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default()(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
 
 /***/ }),
 
@@ -328,6 +386,44 @@ function _inherits(subClass, superClass) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArray; });
+/* harmony import */ var _core_js_array_from__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/array/from */ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js");
+/* harmony import */ var _core_js_array_from__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_array_from__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/is-iterable */ "./node_modules/@babel/runtime-corejs2/core-js/is-iterable.js");
+/* harmony import */ var _core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function _iterableToArray(iter) {
+  if (_core_js_is_iterable__WEBPACK_IMPORTED_MODULE_1___default()(Object(iter)) || Object.prototype.toString.call(iter) === "[object Arguments]") return _core_js_array_from__WEBPACK_IMPORTED_MODULE_0___default()(iter);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js":
 /*!**************************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js ***!
@@ -376,6 +472,28 @@ function _setPrototypeOf(o, p) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _toConsumableArray; });
+/* harmony import */ var _arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime-corejs2/helpers/esm/arrayWithoutHoles.js");
+/* harmony import */ var _iterableToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/iterableToArray.js");
+/* harmony import */ var _nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/nonIterableSpread.js");
+
+
+
+function _toConsumableArray(arr) {
+  return Object(_arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || Object(_nonIterableSpread__WEBPACK_IMPORTED_MODULE_2__["default"])();
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/typeof.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/typeof.js ***!
@@ -420,19 +538,20 @@ function _typeof(obj) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lodash */ "lodash");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/scss/style.scss */ "./assets/scss/style.scss");
-/* harmony import */ var _assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! lodash */ "lodash");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/scss/style.scss */ "./assets/scss/style.scss");
+/* harmony import */ var _assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -440,10 +559,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/mnt/c/Users/developer/Documents/projects/tetris/pages/index.js";
+
+var _jsxFileName = "/var/www/project1/tetris/tetris/pages/index.js";
 
 
 
+var _fieldWidth = 11;
+var _fieldHeight = 21;
+var _incatives = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 310, 410, 510, 610, 710, 810, 910, 110, 200, 1010, 1110, 1210, 1310, 1410, 1510, 1610, 1710, 1810, 1910, 2010];
+var _incativeBottom = [200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 2010];
+var _allowedFigures = [[[4, 5, 6], [5, 15, 25]], [[14, 15, 16, 25], [5, 14, 15, 16], [5, 25, 15, 16], [5, 15, 25, 14]], [[4, 5, 6, 14, 16, 25, 24, 26, 15]]];
 
 var Block = function Block(_ref) {
   var index = _ref.index,
@@ -451,11 +576,11 @@ var Block = function Block(_ref) {
       number = _ref.number,
       figure = _ref.figure,
       incative = _ref.incative;
-  return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-    className: "block ".concat(figure ? 'figure-block' : '', " \n        block-").concat(index, " \n        ").concat(active ? 'filled' : '', "\n        ").concat(incative ? 'inactive' : '', "\n        "),
+  return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+    className: "block \n            block-".concat(index, " \n            ").concat(active ? 'filled' : '', "\n            ").concat(incative ? 'inactive' : '', "\n        "),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 37
     },
     __self: this
   }, number);
@@ -464,134 +589,238 @@ var Block = function Block(_ref) {
 var Line = function Line(_ref2) {
   var index = _ref2.index,
       line = _ref2.line;
-  return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
     className: "line line-".concat(index),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 47
     },
     __self: this
   }, line);
 };
 
-var _fieldWidth = 11;
-var _fieldHeight = 21;
-var _incatives = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 210, 310, 410, 510, 610, 710, 810, 910, 110, 200];
-var _bottomInactive = [201, 202, 203, 204, 205, 206, 207, 208, 209, 2010];
-var _allowedFigures = [[[4, 5, 6], [5, 15, 25]], [[14, 15, 16, 25], [5, 14, 15, 16], [5, 25, 15, 16], [5, 15, 25, 14]], [[4, 5, 6, 14, 16, 25, 24, 26, 15]]];
+var _removeFirstAndlastElement = function _removeFirstAndlastElement(array) {
+  array.shift();
+  array.pop();
+  return array;
+};
 
 var Index =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Index, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Index, _React$Component);
 
   function Index() {
     var _getPrototypeOf2;
 
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Index);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Index);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Index)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Index)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "state", {
       activeFigureIndex: 0,
+      canPlay: true,
+      score: 0,
       bottomStructure: [],
-      active: [4, 5, 6, 14, 16, 25, 24, 26, 15],
-      currentFigure: 0
+      active: [4, 5, 6],
+      currentFigure: 0,
+      filledLineMarker: [],
+      allowedFigures: []
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "_moveLeft", function () {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_moveLeft", function () {
       var _this$state = _this.state,
-          active = _this$state.active,
-          incatives = _this$state.incatives;
-      var newActive = active.map(function (item) {
-        return item - 1;
+          allowedFigures = _this$state.allowedFigures,
+          activeFigureIndex = _this$state.activeFigureIndex;
+
+      var newAllowedFigures = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(allowedFigures);
+
+      newAllowedFigures = newAllowedFigures.map(function (item) {
+        return item.map(function (figure) {
+          return figure - 1;
+        });
       });
 
-      if (lodash__WEBPACK_IMPORTED_MODULE_8___default.a.intersection(newActive, incatives).length > 0) {
+      if (lodash__WEBPACK_IMPORTED_MODULE_9___default.a.intersection(newAllowedFigures[activeFigureIndex], _incatives).length > 0) {
         return false;
       }
 
       _this.setState({
-        active: newActive
+        allowedFigures: newAllowedFigures,
+        active: newAllowedFigures[activeFigureIndex]
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "_moveDown", function () {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_moveRight", function () {
       var _this$state2 = _this.state,
-          active = _this$state2.active,
-          bottomStructure = _this$state2.bottomStructure;
-      var newActive = active.map(function (item) {
-        return item + 10;
+          activeFigureIndex = _this$state2.activeFigureIndex,
+          allowedFigures = _this$state2.allowedFigures;
+      var newAllowedFigures = allowedFigures;
+      newAllowedFigures = newAllowedFigures.map(function (item) {
+        return item.map(function (figure) {
+          return figure + 1;
+        });
       });
 
-      if (lodash__WEBPACK_IMPORTED_MODULE_8___default.a.intersection(newActive, _bottomInactive).length > 0) {
-        bottomStructure.push(active);
+      if (lodash__WEBPACK_IMPORTED_MODULE_9___default.a.intersection(newAllowedFigures[activeFigureIndex], _incatives).length > 0) {
         return false;
       }
 
       _this.setState({
-        active: newActive
+        allowedFigures: newAllowedFigures,
+        active: newAllowedFigures[activeFigureIndex]
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "_moveRight", function () {
-      var active = _this.state.active;
-      var newActive = active.map(function (item) {
-        return item + 1;
-      });
-
-      if (lodash__WEBPACK_IMPORTED_MODULE_8___default.a.intersection(newActive, _incatives).length > 0) {
-        return false;
-      }
-
-      _this.setState({
-        active: newActive
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "_rotateFigure", function () {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_moveDown", function () {
       var _this$state3 = _this.state,
-          currentFigure = _this$state3.currentFigure,
-          activeFigureIndex = _this$state3.activeFigureIndex;
-      var maxIndex = _allowedFigures[currentFigure].length - 1;
+          activeFigureIndex = _this$state3.activeFigureIndex,
+          allowedFigures = _this$state3.allowedFigures,
+          bottomStructure = _this$state3.bottomStructure;
+
+      var newAllowedFigures = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(allowedFigures);
+
+      newAllowedFigures = newAllowedFigures.map(function (item) {
+        return item.map(function (figure) {
+          return figure + 10;
+        });
+      });
+
+      if (lodash__WEBPACK_IMPORTED_MODULE_9___default.a.intersection(newAllowedFigures[activeFigureIndex], _incativeBottom).length > 0 || lodash__WEBPACK_IMPORTED_MODULE_9___default.a.intersection(newAllowedFigures[activeFigureIndex], bottomStructure).length > 0) {
+        var newBottomStructure = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(bottomStructure);
+
+        newBottomStructure.push(newAllowedFigures[activeFigureIndex].map(function (figure) {
+          return figure - 10;
+        }));
+
+        _this.setState({
+          bottomStructure: lodash__WEBPACK_IMPORTED_MODULE_9___default.a.uniq(newBottomStructure.flat())
+        });
+
+        _this._changeFigure();
+
+        _this._checkProgress();
+
+        return false;
+      }
+
+      _this.setState({
+        allowedFigures: newAllowedFigures,
+        active: newAllowedFigures[activeFigureIndex]
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_rotateFigure", function () {
+      var _this$state4 = _this.state,
+          activeFigureIndex = _this$state4.activeFigureIndex,
+          allowedFigures = _this$state4.allowedFigures;
+      var maxIndex = allowedFigures.length - 1;
       var newIndex = activeFigureIndex + 1 <= maxIndex ? activeFigureIndex + 1 : 0;
 
       _this.setState({
-        activeFigureIndex: newIndex
+        activeFigureIndex: newIndex,
+        active: allowedFigures[newIndex]
       });
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "_changeFigure", function () {
-      var allowedFigures = _this.state.allowedFigures;
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_changeFigure", function () {
+      var currentFigure = Math.floor(Math.random() * _allowedFigures.length);
+      var newAllowedFigures = _allowedFigures[currentFigure];
 
       _this.setState({
-        currentFigure: Math.floor(Math.random() * allowedFigures.length),
-        activeFigureIndex: 0
+        activeFigureIndex: 0,
+        allowedFigures: newAllowedFigures,
+        active: newAllowedFigures[0]
       });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_checkLine", function () {
+      var _this$state5 = _this.state,
+          filledLineMarker = _this$state5.filledLineMarker,
+          bottomStructure = _this$state5.bottomStructure,
+          score = _this$state5.score;
+      if (!bottomStructure.length) return false;
+
+      var newBottomStructure = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(bottomStructure);
+
+      filledLineMarker.map(function (item) {
+        if (item.every(function (elem) {
+          return newBottomStructure.includes(elem);
+        })) {
+          var newBottomStructureFiltered = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(newBottomStructure.filter(function (el) {
+            return !item.includes(el);
+          }));
+
+          newBottomStructureFiltered = newBottomStructureFiltered.map(function (block) {
+            return block + 10;
+          });
+
+          _this.setState({
+            bottomStructure: newBottomStructureFiltered,
+            score: score + 1
+          });
+        }
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_checkProgress", function () {
+      var _this$state6 = _this.state,
+          filledLineMarker = _this$state6.filledLineMarker,
+          bottomStructure = _this$state6.bottomStructure;
+      var firstLine = filledLineMarker[0];
+
+      if (lodash__WEBPACK_IMPORTED_MODULE_9___default.a.intersection(bottomStructure, firstLine).length) {
+        _this.setState({
+          canPlay: false
+        });
+      }
     });
 
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Index, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// setInterval(this._moveLeft, 1000)
+    value: function componentDidMount() {
+      var filledLineMarker = [];
+
+      for (var i = 0; i < _fieldHeight; i++) {
+        var line = new Array();
+
+        for (var j = 0; j < _fieldWidth; j++) {
+          line.push(Number(String(i) + j));
+        }
+
+        filledLineMarker.push(_removeFirstAndlastElement(line));
+      }
+
+      this.setState({
+        filledLineMarker: filledLineMarker
+      });
+
+      this._changeFigure();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(props, state) {
+      this._checkLine();
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var _this$state4 = this.state,
-          currentFigure = _this$state4.currentFigure,
-          activeFigureIndex = _this$state4.activeFigureIndex,
-          bottomStructure = _this$state4.bottomStructure;
+      var _this$state7 = this.state,
+          bottomStructure = _this$state7.bottomStructure,
+          active = _this$state7.active,
+          canPlay = _this$state7.canPlay,
+          score = _this$state7.score;
       var field = [];
 
       for (var i = 0; i < _fieldHeight; i++) {
@@ -600,119 +829,181 @@ function (_React$Component) {
         for (var j = 0; j < _fieldWidth; j++) {
           var number = Number(String(i) + j);
 
-          var incative = _incatives.includes(number);
+          var incative = _incatives.includes(number) || _incativeBottom.includes(number);
 
-          line.push(react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Block, {
+          line.push(react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Block, {
             key: j,
             incative: incative,
             index: j,
-            figure: _allowedFigures[currentFigure][activeFigureIndex].includes(number),
-            active: _allowedFigures[currentFigure][activeFigureIndex].includes(number) || lodash__WEBPACK_IMPORTED_MODULE_8___default.a.flatten(bottomStructure).includes(number),
+            active: active.includes(number) || bottomStructure.includes(number),
             number: number,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 104
+              lineNumber: 177
             },
             __self: this
           }));
         }
 
-        field.push(react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Line, {
+        field.push(react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Line, {
           key: i,
           line: line,
           index: i,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112
+            lineNumber: 184
           },
           __self: this
         }));
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 188
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 189
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
         onClick: function onClick(e) {
           return _this2._moveDown();
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 190
         },
         __self: this
-      }, "Down"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
+      }, "Down"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
         onClick: function onClick(e) {
           return _this2._moveLeft();
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119
+          lineNumber: 191
         },
         __self: this
-      }, "Left"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
+      }, "Left"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
         onClick: function onClick(e) {
           return _this2._moveRight();
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120
+          lineNumber: 192
         },
         __self: this
-      }, "Right"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
+      }, "Right"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
         onClick: function onClick(e) {
           return _this2._rotateFigure();
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121
+          lineNumber: 193
         },
         __self: this
-      }, "Rotate"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
+      }, "Rotate"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
         onClick: function onClick(e) {
           return _this2._changeFigure();
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 194
         },
         __self: this
-      }, "Change")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: 'field',
+      }, "Change"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
+        onClick: function onClick(e) {
+          return _this2._checkLine();
+        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 195
         },
         __self: this
-      }, field));
+      }, "Check"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
+        onClick: function onClick(e) {
+          return _this2._checkProgress();
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 196
+        },
+        __self: this
+      }, "Check progress")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 198
+        },
+        __self: this
+      }, "Score: ", score), canPlay ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        className: _assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_10___default.a.field,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199
+        },
+        __self: this
+      }, field) : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 201
+        },
+        __self: this
+      }, "You lose Bro"));
     }
   }]);
 
   return Index;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /mnt/c/Users/developer/Documents/projects/tetris/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /var/www/project1/tetris/tetris/pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "core-js/library/fn/array/from":
+/*!************************************************!*\
+  !*** external "core-js/library/fn/array/from" ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/array/from");
+
+/***/ }),
+
+/***/ "core-js/library/fn/array/is-array":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/array/is-array" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/array/is-array");
+
+/***/ }),
+
+/***/ "core-js/library/fn/is-iterable":
+/*!*************************************************!*\
+  !*** external "core-js/library/fn/is-iterable" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/is-iterable");
 
 /***/ }),
 

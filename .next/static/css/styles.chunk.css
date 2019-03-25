@@ -5,7 +5,7 @@
 .block {
   width: 30px;
   height: 30px;
-  border-radius: 1.5px;
+  border-radius: 2px;
   border: 1px solid #161515;
   margin: 1px; }
 
@@ -19,6 +19,9 @@
 
 .figure-block {
   background-color: green; }
+
+.inactive {
+  display: none; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
