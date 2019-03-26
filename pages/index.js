@@ -33,7 +33,7 @@ const _allowedFigures =  [
         [4, 5, 6, 14, 16, 25, 24, 26, 15]
     ]
 ]
-const Block = ({ index, active, incative }) => (
+const Block = ({ index, active, incative, number }) => (
     <div
         className={
             `block 
@@ -41,7 +41,7 @@ const Block = ({ index, active, incative }) => (
             ${active ? 'filled' : ''}
             ${incative ? 'inactive' : ''}
         `
-        }></div>
+        }>{number}</div>
 )
 
 const Line = ({ index, line }) => <div className={`line line-${index}`}>{line}</div>
@@ -90,7 +90,7 @@ class Index extends React.Component {
     }
 
     componentDidUpdate(props, state) {
-        //this._checkLine()
+        this._checkLine()
     }
 
     _moveLeft = () => {
@@ -122,7 +122,6 @@ class Index extends React.Component {
             let newBottomStructure = [...bottomStructure]
             newBottomStructure.push(newAllowedFigures[activeFigureIndex].map((figure) => figure - 10))
             this.setState({ bottomStructure: _.uniq(newBottomStructure.flat()) })
-            this._checkLine()
             this._changeFigure()
             this._checkProgress()
             return false;
@@ -156,33 +155,18 @@ class Index extends React.Component {
             return false;
 
         let newBottomStructure = [...bottomStructure]
-        let lineCounter = 0;
-        let lineForMoveDown = [];
         filledLineMarker.map((item) => {
             if (item.every((elem) => newBottomStructure.includes(elem))) {
-                ++lineCounter;
-                lineForMoveDown.push(Math.min.apply(null, item))
                 let newBottomStructureFiltered = [...newBottomStructure.filter((el) => !item.includes(el))]
+                newBottomStructureFiltered = newBottomStructureFiltered.map((block) => {
+                    if (block < Math.min(...item)) {
+                        block = block + 10
+                    }
+                    return block
+                })
                 this.setState({ bottomStructure: newBottomStructureFiltered })      
             }
         })
-        if (lineCounter) {
-            let lineForCheck = 0;
-            let startForDown = Math.min.apply(null, lineForMoveDown)
-            filledLineMarker.map((item, k) => {
-                if (item.includes(startForDown)) {
-                    lineForCheck = k
-                }
-            })
-            let moveLinesDown = [...bottomStructure];
-            let markerLine = filledLineMarker[lineForCheck]
-            moveLinesDown = moveLinesDown.map((block) => {
-                if (block > Math.min.apply(null, markerLine)) {
-                    block + (lineCounter * 10)
-                }
-            })
-            this.setState({ bottomStructure: moveLinesDown })    
-        }
     }
 
     _checkProgress = () => {

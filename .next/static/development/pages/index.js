@@ -19742,7 +19742,8 @@ var _allowedFigures = [[[4, 5, 6], [5, 15, 25]], [[14, 15, 16, 25], [5, 14, 15, 
 var Block = function Block(_ref) {
   var index = _ref.index,
       active = _ref.active,
-      incative = _ref.incative;
+      incative = _ref.incative,
+      number = _ref.number;
   return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
     className: "block \n            block-".concat(index, " \n            ").concat(active ? 'filled' : '', "\n            ").concat(incative ? 'inactive' : '', "\n        "),
     __source: {
@@ -19750,7 +19751,7 @@ var Block = function Block(_ref) {
       lineNumber: 37
     },
     __self: this
-  });
+  }, number);
 };
 
 var Line = function Line(_ref2) {
@@ -19886,8 +19887,6 @@ function (_React$Component) {
           bottomStructure: lodash__WEBPACK_IMPORTED_MODULE_9___default.a.uniq(newBottomStructure.flat())
         });
 
-        _this._checkLine();
-
         _this._changeFigure();
 
         _this._checkProgress();
@@ -19934,47 +19933,27 @@ function (_React$Component) {
 
       var newBottomStructure = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(bottomStructure);
 
-      var lineCounter = 0;
-      var lineForMoveDown = [];
       filledLineMarker.map(function (item) {
         if (item.every(function (elem) {
           return newBottomStructure.includes(elem);
         })) {
-          ++lineCounter;
-          lineForMoveDown.push(Math.min.apply(null, item));
-
           var newBottomStructureFiltered = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(newBottomStructure.filter(function (el) {
             return !item.includes(el);
           }));
+
+          newBottomStructureFiltered = newBottomStructureFiltered.map(function (block) {
+            if (block < Math.min.apply(Math, Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(item))) {
+              block = block + 10;
+            }
+
+            return block;
+          });
 
           _this.setState({
             bottomStructure: newBottomStructureFiltered
           });
         }
       });
-
-      if (lineCounter) {
-        var lineForCheck = 0;
-        var startForDown = Math.min.apply(null, lineForMoveDown);
-        filledLineMarker.map(function (item, k) {
-          if (item.includes(startForDown)) {
-            lineForCheck = k;
-          }
-        });
-
-        var moveLinesDown = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(bottomStructure);
-
-        var markerLine = filledLineMarker[lineForCheck];
-        moveLinesDown = moveLinesDown.map(function (block) {
-          if (block > Math.min.apply(null, markerLine)) {
-            block + lineCounter * 10;
-          }
-        });
-
-        _this.setState({
-          bottomStructure: moveLinesDown
-        });
-      }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_checkProgress", function () {
@@ -20020,7 +19999,8 @@ function (_React$Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate(props, state) {//this._checkLine()
+    value: function componentDidUpdate(props, state) {
+      this._checkLine();
     }
   }, {
     key: "render",
@@ -20050,7 +20030,7 @@ function (_React$Component) {
             number: number,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 211
+              lineNumber: 195
             },
             __self: this
           }));
@@ -20062,7 +20042,7 @@ function (_React$Component) {
           index: i,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 218
+            lineNumber: 202
           },
           __self: this
         }));
@@ -20071,13 +20051,13 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 222
+          lineNumber: 206
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 223
+          lineNumber: 207
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -20086,7 +20066,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 224
+          lineNumber: 208
         },
         __self: this
       }, "Down"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -20095,7 +20075,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 225
+          lineNumber: 209
         },
         __self: this
       }, "Left"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -20104,7 +20084,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 226
+          lineNumber: 210
         },
         __self: this
       }, "Right"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -20113,7 +20093,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 227
+          lineNumber: 211
         },
         __self: this
       }, "Rotate"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -20122,7 +20102,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 228
+          lineNumber: 212
         },
         __self: this
       }, "Change"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -20131,7 +20111,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 213
         },
         __self: this
       }, "Check"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -20140,20 +20120,20 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 214
         },
         __self: this
       }, "Check progress")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 232
+          lineNumber: 216
         },
         __self: this
       }, "Score: ", score), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: _assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_10___default.a.field,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 217
         },
         __self: this
       }, field));
@@ -20167,7 +20147,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*****************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fvar%2Fwww%2Fproject1%2Ftetris%2Ftetris%2Fpages%2Findex.js ***!
   \*****************************************************************************************************************************/
@@ -20190,5 +20170,5 @@ module.exports = dll_303cab3af06bf749d1ff;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js","styles"]]]));;
+},[[1,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=index.js.map

@@ -4669,7 +4669,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_303cab3af06bf749d1ff
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*****************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F_error&absolutePagePath=%2Fvar%2Fwww%2Fproject1%2Ftetris%2Ftetris%2Fnode_modules%2Fnext%2Fdist%2Fpages%2F_error.js ***!
   \*****************************************************************************************************************************************************************/
@@ -4692,5 +4692,5 @@ module.exports = dll_303cab3af06bf749d1ff;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=_error.js.map
