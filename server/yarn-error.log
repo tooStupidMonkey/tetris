@@ -1,0 +1,31 @@
+Arguments: 
+  /home/developer/.nvm/versions/node/v11.1.0/bin/node /usr/share/yarn/bin/yarn.js add express --save
+
+PATH: 
+  /home/developer/.nvm/versions/node/v11.1.0/bin:/home/developer/.config/composer/vendor/bin:/home/developer/Library/Android/sdk/platform-tools:/home/developer/Library/Android/sdk/tools:/home/developer/.composer/vendor/bin:/home/developer/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/developer/.dotnet/tools:/home/developer/.composer/vendor/bin:/home/developer/.dotnet/tools:/home/developer/Android/Sdk/tools:/home/developer/Android/Sdk/tools/bin:/home/developer/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  11.1.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /var/www/project1/tetris/tetris/server/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1631:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:304:30)
+      at /usr/share/yarn/lib/cli.js:315:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
