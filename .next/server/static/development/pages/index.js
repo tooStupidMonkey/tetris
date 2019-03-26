@@ -573,8 +573,6 @@ var _allowedFigures = [[[4, 5, 6], [5, 15, 25]], [[14, 15, 16, 25], [5, 14, 15, 
 var Block = function Block(_ref) {
   var index = _ref.index,
       active = _ref.active,
-      number = _ref.number,
-      figure = _ref.figure,
       incative = _ref.incative;
   return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
     className: "block \n            block-".concat(index, " \n            ").concat(active ? 'filled' : '', "\n            ").concat(incative ? 'inactive' : '', "\n        "),
@@ -583,7 +581,7 @@ var Block = function Block(_ref) {
       lineNumber: 37
     },
     __self: this
-  }, number);
+  });
 };
 
 var Line = function Line(_ref2) {
@@ -629,9 +627,25 @@ function (_React$Component) {
       score: 0,
       bottomStructure: [],
       active: [4, 5, 6],
+      autoMove: null,
       currentFigure: 0,
       filledLineMarker: [],
       allowedFigures: []
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_initGame", function () {
+      _this._changeFigure();
+
+      _this.setState({
+        autoMove: setInterval(function () {
+          return _this._moveDown();
+        }, 1000)
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_destractGame", function () {
+      var autoMove = _this.state.autoMove;
+      clearInterval(autoMove);
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_moveLeft", function () {
@@ -703,6 +717,8 @@ function (_React$Component) {
           bottomStructure: lodash__WEBPACK_IMPORTED_MODULE_9___default.a.uniq(newBottomStructure.flat())
         });
 
+        _this._checkLine();
+
         _this._changeFigure();
 
         _this._checkProgress();
@@ -749,24 +765,47 @@ function (_React$Component) {
 
       var newBottomStructure = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(bottomStructure);
 
+      var lineCounter = 0;
+      var lineForMoveDown = [];
       filledLineMarker.map(function (item) {
         if (item.every(function (elem) {
           return newBottomStructure.includes(elem);
         })) {
+          ++lineCounter;
+          lineForMoveDown.push(Math.min.apply(null, item));
+
           var newBottomStructureFiltered = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(newBottomStructure.filter(function (el) {
             return !item.includes(el);
           }));
 
-          newBottomStructureFiltered = newBottomStructureFiltered.map(function (block) {
-            return block + 10;
-          });
-
           _this.setState({
-            bottomStructure: newBottomStructureFiltered,
-            score: score + 1
+            bottomStructure: newBottomStructureFiltered
           });
         }
       });
+
+      if (lineCounter) {
+        var lineForCheck = 0;
+        var startForDown = Math.min.apply(null, lineForMoveDown);
+        filledLineMarker.map(function (item, k) {
+          if (item.includes(startForDown)) {
+            lineForCheck = k;
+          }
+        });
+
+        var moveLinesDown = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(bottomStructure);
+
+        var markerLine = filledLineMarker[lineForCheck];
+        moveLinesDown = moveLinesDown.map(function (block) {
+          if (block > Math.min.apply(null, markerLine)) {
+            block + lineCounter * 10;
+          }
+        });
+
+        _this.setState({
+          bottomStructure: moveLinesDown
+        });
+      }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "_checkProgress", function () {
@@ -779,6 +818,10 @@ function (_React$Component) {
         _this.setState({
           canPlay: false
         });
+
+        _this._destractGame();
+
+        alert('GAME over bro');
       }
     });
 
@@ -804,12 +847,11 @@ function (_React$Component) {
         filledLineMarker: filledLineMarker
       });
 
-      this._changeFigure();
+      this._initGame();
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate(props, state) {
-      this._checkLine();
+    value: function componentDidUpdate(props, state) {//this._checkLine()
     }
   }, {
     key: "render",
@@ -839,7 +881,7 @@ function (_React$Component) {
             number: number,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 177
+              lineNumber: 211
             },
             __self: this
           }));
@@ -851,7 +893,7 @@ function (_React$Component) {
           index: i,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 184
+            lineNumber: 218
           },
           __self: this
         }));
@@ -860,13 +902,13 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 222
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 223
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -875,7 +917,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 224
         },
         __self: this
       }, "Down"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -884,7 +926,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 191
+          lineNumber: 225
         },
         __self: this
       }, "Left"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -893,7 +935,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 192
+          lineNumber: 226
         },
         __self: this
       }, "Right"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -902,7 +944,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193
+          lineNumber: 227
         },
         __self: this
       }, "Rotate"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -911,7 +953,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194
+          lineNumber: 228
         },
         __self: this
       }, "Change"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -920,7 +962,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195
+          lineNumber: 229
         },
         __self: this
       }, "Check"), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("button", {
@@ -929,29 +971,23 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 196
+          lineNumber: 230
         },
         __self: this
       }, "Check progress")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198
+          lineNumber: 232
         },
         __self: this
-      }, "Score: ", score), canPlay ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
+      }, "Score: ", score), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
         className: _assets_scss_style_scss__WEBPACK_IMPORTED_MODULE_10___default.a.field,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199
+          lineNumber: 233
         },
         __self: this
-      }, field) : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 201
-        },
-        __self: this
-      }, "You lose Bro"));
+      }, field));
     }
   }]);
 

@@ -33,7 +33,7 @@ const _allowedFigures =  [
         [4, 5, 6, 14, 16, 25, 24, 26, 15]
     ]
 ]
-const Block = ({ index, active, number, figure, incative }) => (
+const Block = ({ index, active, incative }) => (
     <div
         className={
             `block 
@@ -41,7 +41,7 @@ const Block = ({ index, active, number, figure, incative }) => (
             ${active ? 'filled' : ''}
             ${incative ? 'inactive' : ''}
         `
-        }>{number}</div>
+        }></div>
 )
 
 const Line = ({ index, line }) => <div className={`line line-${index}`}>{line}</div>
@@ -59,6 +59,7 @@ class Index extends React.Component {
         score: 0,
         bottomStructure: [],
         active: [4, 5, 6],
+        autoMove:null,
         currentFigure: 0,
         filledLineMarker: [],
         allowedFigures : []
@@ -74,11 +75,22 @@ class Index extends React.Component {
             filledLineMarker.push(_removeFirstAndlastElement(line))
         }
         this.setState({ filledLineMarker })
+        this._initGame()
+    }
+
+    _initGame = () => {
         this._changeFigure()
+        this.setState({ autoMove: setInterval(() => this._moveDown(), 1000) })
+        
+    }
+
+    _destractGame = () => {
+        const { autoMove } = this.state
+        clearInterval(autoMove)
     }
 
     componentDidUpdate(props, state) {
-        this._checkLine()
+        //this._checkLine()
     }
 
     _moveLeft = () => {
@@ -110,6 +122,7 @@ class Index extends React.Component {
             let newBottomStructure = [...bottomStructure]
             newBottomStructure.push(newAllowedFigures[activeFigureIndex].map((figure) => figure - 10))
             this.setState({ bottomStructure: _.uniq(newBottomStructure.flat()) })
+            this._checkLine()
             this._changeFigure()
             this._checkProgress()
             return false;
@@ -143,21 +156,42 @@ class Index extends React.Component {
             return false;
 
         let newBottomStructure = [...bottomStructure]
-
+        let lineCounter = 0;
+        let lineForMoveDown = [];
         filledLineMarker.map((item) => {
             if (item.every((elem) => newBottomStructure.includes(elem))) {
+                ++lineCounter;
+                lineForMoveDown.push(Math.min.apply(null, item))
                 let newBottomStructureFiltered = [...newBottomStructure.filter((el) => !item.includes(el))]
-                newBottomStructureFiltered = newBottomStructureFiltered.map((block)=>block + 10)
-                this.setState({ bottomStructure: newBottomStructureFiltered, score: score + 1 })      
+                this.setState({ bottomStructure: newBottomStructureFiltered })      
             }
         })
+        if (lineCounter) {
+            let lineForCheck = 0;
+            let startForDown = Math.min.apply(null, lineForMoveDown)
+            filledLineMarker.map((item, k) => {
+                if (item.includes(startForDown)) {
+                    lineForCheck = k
+                }
+            })
+            let moveLinesDown = [...bottomStructure];
+            let markerLine = filledLineMarker[lineForCheck]
+            moveLinesDown = moveLinesDown.map((block) => {
+                if (block > Math.min.apply(null, markerLine)) {
+                    block + (lineCounter * 10)
+                }
+            })
+            this.setState({ bottomStructure: moveLinesDown })    
+        }
     }
 
     _checkProgress = () => {
         const { filledLineMarker, bottomStructure } = this.state
         const firstLine = filledLineMarker[0]
         if (_.intersection(bottomStructure, firstLine).length) {
-            this.setState({canPlay: false})
+            this.setState({ canPlay: false })
+            this._destractGame()
+            alert('GAME over bro')
         }
     }
 
@@ -196,9 +230,9 @@ class Index extends React.Component {
                     <button onClick={(e) => this._checkProgress()}>Check progress</button>
                 </div>
                 <div>Score: {score}</div> 
-                {canPlay ? <div className={styles.field}>
+                <div className={styles.field}>
                     {field}
-                </div> : <div>You lose Bro</div>}
+                </div>
             </div>
         );
     }
